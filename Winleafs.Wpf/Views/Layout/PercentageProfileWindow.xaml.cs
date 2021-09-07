@@ -19,7 +19,10 @@ namespace Winleafs.Wpf.Views.Layout
             InitializeComponent();
 
             LayoutDisplay.EnableClick();
-            LayoutDisplay.DrawLayout();
+
+			//Required to make shapes appear
+			LayoutDisplay.InitializeResizeTimer();
+			LayoutDisplay.DrawLayout();
             LayoutDisplay.DisableColorTimer();
 
             if (UserSettings.Settings.ActiveDevice.PercentageProfile != null)
